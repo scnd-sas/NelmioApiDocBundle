@@ -41,7 +41,7 @@
         <service id="nelmio_api_doc.model_describers.object" class="Nelmio\ApiDocBundle\ModelDescriber\ObjectModelDescriber" public="false">
             <argument type="service" id="property_info" />
             <argument type="service" id="annotations.reader" />
-            <argument type="tagged" tag="nelmio_api_doc.object_model.property_describer" />
+            <argument type="tagged_iterator" tag="nelmio_api_doc.object_model.property_describer" />
             <argument type="service" id="serializer.name_converter.metadata_aware" on-invalid="ignore" />
 
             <tag name="nelmio_api_doc.model_describer" />
@@ -53,7 +53,7 @@
 
         <!-- Property Describers -->
         <service id="nelmio_api_doc.object_model.property_describers.array" class="Nelmio\ApiDocBundle\PropertyDescriber\ArrayPropertyDescriber" public="false">
-            <argument type="tagged" tag="nelmio_api_doc.object_model.property_describer" />
+            <argument type="tagged_iterator" tag="nelmio_api_doc.object_model.property_describer" />
 
             <tag name="nelmio_api_doc.object_model.property_describer" />
         </service>
